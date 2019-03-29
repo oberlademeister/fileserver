@@ -15,10 +15,10 @@ func Make(root string, opts ...Option) error {
 
 	// apply options
 	for _, o := range opts {
-		o(&config)
+		o(config)
 	}
 
-	if err := doDir(root, config.recursionDepth, &config); err != nil {
+	if err := doDir(root, config.recursionDepth, config); err != nil {
 		return errors.Wrap(err, "failed to do dir")
 	}
 	return nil
@@ -41,7 +41,7 @@ func doDir(dir string, recLevelsToGo int, config *Config) error {
 		}
 		defer w.Close()
 		// write body of index.html here
-		config.indexRenderer(w, fis)
+		config.indexRenderer(w, dir, fis)
 	}
 NOCREATE:
 	if recLevelsToGo == 0 {
@@ -49,7 +49,7 @@ NOCREATE:
 	}
 	for _, fi := range fis {
 		if fi.IsDir() {
-			doDir(filepath.Join(dir, fi.Name()), recLevelsToGo - 1, config)
+			doDir(filepath.Join(dir, fi.Name()), recLevelsToGo-1, config)
 		}
 	}
 

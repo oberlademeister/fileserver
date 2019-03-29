@@ -11,14 +11,15 @@ type Config struct {
 }
 
 // DefaultConfig returns a default configuration
-func DefaultConfig() Config {
-	return Config{
+func DefaultConfig() *Config {
+	c :=  &Config{
 		recursionDepth:    0,
 		indexName:         "index.html",
 		overwriteExisting: false,
-		indexRenderer:     DefaultRenderer,
 		logger: &NullLogger{},
 	}
+	c.indexRenderer = GetDefaultRenderer(c)
+	return c
 }
 
 // Option is influencing the config
