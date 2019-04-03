@@ -1,2 +1,5 @@
+github.com/oberlademeister/indexmaker v0.0.0-20190328214837-63a5baa01e60/go.mod h1:Tagf0Furbkb9F1TP1nqb+fAWVtG/h1szhr8E8YeoZIw=
+github.com/oberlademeister/indexmaker/cmd/imtest v0.0.0-20190329103053-f0ce1b2f279c h1:9p7LJydVxBMvDtk6LFNPU0puXgNVCK/uN5Tt4enr6Ww=
+github.com/oberlademeister/indexmaker/cmd/imtest v0.0.0-20190329103053-f0ce1b2f279c/go.mod h1:0v5G7Tpnq3utP0gF3DFYu+ur9DSmQNBrT0RUxwwTPlY=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
